@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: quantity-measurement-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: quantity-measurement-db
+          property: connectionString
+      - key: Jwt__Key
+        sync: false   # set manually in Render dashboard
+      - key: Jwt__Issuer
+        value: QuantityApp
+      - key: Jwt__Audience
+        value: QuantityAppUsers
+      - key: Google__ClientId
+        sync: false   # set manually in Render dashboard
+      - key: AllowedOrigins
+        sync: false   # set to your frontend URL in Render dashboard
+
+databases:
+  - name: quantity-measurement-db
+    plan: free
+    databaseName: quantitymeasurementdb
+    user: quantityapp

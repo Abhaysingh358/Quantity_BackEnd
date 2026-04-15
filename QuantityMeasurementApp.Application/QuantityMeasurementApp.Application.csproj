@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuantityMeasurementApp.Business\QuantityMeasurementApp.Business.csproj" />
+    <ProjectReference Include="..\QuantityMeasurementApp.Models\QuantityMeasurementApp.Models.csproj" />
+    <ProjectReference Include="..\QuantityMeasurementApp.Controllers\QuantityMeasurementApp.Controllers.csproj" />
+    <ProjectReference Include="..\QuantityMeasurementApp.Repositories\QuantityMeasurementApp.Repositories.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
